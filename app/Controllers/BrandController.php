@@ -37,7 +37,7 @@ class BrandController extends BaseController
                 if ($result) {
                     $this->session->setFlashdata('message', 'Brand Saved successfully');
                     echo $this->session->getFlashdata('message');
-                    //redirect('brand');
+                    redirect()->to('brand');
                 }
             } else {
                 # code...
@@ -67,7 +67,7 @@ class BrandController extends BaseController
                 if ($result) {
                     $this->session->setFlashdata('message', 'Brand Saved successfully');
                     echo $this->session->getFlashdata('message');
-                    //redirect('brand');
+                    redirect()->to('brand');
                 }
             } else {
                 # code...
@@ -83,6 +83,7 @@ class BrandController extends BaseController
     public function delete($id = null){
 
         $this->brandModel->delete($id);
+        return redirect()->to('brand');
 
     }
 }

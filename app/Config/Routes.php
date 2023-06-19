@@ -38,12 +38,13 @@ $routes->group('brand', function($routes){
     $routes->add('/', 'BrandController::index');
     $routes->add('create', 'BrandController::create');
     $routes->add('update/(:num)', 'BrandController::update/$1');
+    $routes->add('delete/(:num)', 'BrandController::delete/$1');
 });
 
 //Auth group
 $routes->group('auth', function($routes){
     $routes->add('login', 'Auth\LoginController::index');
-    $routes->add('register', 'Auth\RegisterController::register');
+    $routes->add('register', 'Auth\RegisterController::index');
     
 });
 
